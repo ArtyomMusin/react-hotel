@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const ContainerWrapper = ({ children }) => {
     return (
-        <div className="container d-flex flex-column flex-align-between mt-4 h-100" style={{ paddingBottom: 60 }}>
+        <div className="container main d-flex flex-column justify-content-center flex-align-between h-100">
             {children}
         </div>
     )
