@@ -1,9 +1,9 @@
 import React from 'react'
-import { Switch, Route, Redirect } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
-import ContainerWrapper from './components/common/container'
-import Header from './components/common/header'
-import Footer from './components/common/footer'
+import ContainerWrapper from './components/ui/container'
+import Header from './components/ui/header'
+import Footer from './components/ui/footer'
 import Main from './components/pages/main'
 import AllRooms from './components/pages/allRooms'
 import MyRooms from './components/pages/myRooms'
@@ -21,7 +21,7 @@ function App() {
                     <Route path='/myrooms' component={MyRooms} />
                     <Route path='/admin' component={Admin} />
                     <Route path='/' exact component={Main} />
-                    <Redirect to='/' />
+                    {/* <Redirect to='/' /> */}
                 </Switch>
             </ContainerWrapper>
             <Footer />

@@ -5,6 +5,11 @@ const Nav = () => {
     return (
         <ul className='nav'>
             <li className='nav-item'>
+                <Link className="nav-link link-secondary px-2 text-white menu-nav" aria-current="page" to="/">
+                    Главная
+                </Link>
+            </li>
+            <li className='nav-item'>
                 <Link className="nav-link link-secondary px-2 text-white menu-nav" aria-current="page" to="/allrooms">
                     Доступные номера
                 </Link>

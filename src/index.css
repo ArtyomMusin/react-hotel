@@ -2,3 +2,38 @@
     color: #b1b1b1 !important;
     transition: none !important;
 }
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+}
+
+.room-list {
+    max-width: 100%;
+    width: max-content;
+}
+
+.room-card {
+    position: relative;
+    box-shadow: 0 0 10px #343a40;
+    margin: 1em;
+    border-radius: 0.5em;
+}
+
+.del-room {
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+}
+
+.del-room:focus {
+    box-shadow: 0 0 0 0.25rem rgb(33 37 41 / 25%);
+}
+
+.room-img {
+    width: 150px;
+    height: 100px;
+    background: url('../public/img/preloader.gif') no-repeat center center;
+    background-size: 40%;
+    border-radius: 3px;
+}
