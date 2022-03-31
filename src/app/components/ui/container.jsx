@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const ContainerWrapper = ({ children }) => {
     return (
-        <div className="container main d-flex flex-column justify-content-center flex-align-between h-100">
+        <div className="main d-flex flex-column justify-content-center flex-align-between h-100">
             {children}
         </div>
     )

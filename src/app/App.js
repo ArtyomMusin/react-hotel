@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 import ContainerWrapper from './components/ui/container'
 import Header from './components/ui/header'
@@ -9,6 +9,7 @@ import AllRooms from './components/pages/allRooms'
 import MyRooms from './components/pages/myRooms'
 import Admin from './components/pages/admin'
 import Autorization from './components/pages/autorization'
+import NotFound from './components/pages/notFound'
 
 function App() {
     return (
@@ -17,11 +18,12 @@ function App() {
             <ContainerWrapper>
                 <Switch>
                     <Route path='/autorization' component={Autorization} />
-                    <Route path='/allrooms' component={AllRooms} />
-                    <Route path='/myrooms' component={MyRooms} />
+                    <Route path='/allrooms/:roomId?' component={AllRooms} />
+                    <Route path='/myrooms/:roomId?' component={MyRooms} />
                     <Route path='/admin' component={Admin} />
                     <Route path='/' exact component={Main} />
-                    {/* <Redirect to='/' /> */}
+                    <Route path='*' component={NotFound}/>
+                    <Redirect to='/'/>
                 </Switch>
             </ContainerWrapper>
             <Footer />
