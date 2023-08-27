@@ -1,0 +1,20 @@
+.NavAuthorization {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+.NavAuthorization__Item {
+  display: inline-flex;
+  align-items: center;
+}
+.NavAuthorization__Link {
+  text-decoration: none;
+  color: aliceblue;
+  transition: color 0.2s linear;
+}
+.NavAuthorization__Link:hover {
+  cursor: pointer;
+  color: #b1b1b1;
+}
+
+/*# sourceMappingURL=NavAuthorization.css.map */

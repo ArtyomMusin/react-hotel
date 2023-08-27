@@ -1,0 +1,33 @@
+@import '../../../style.scss';
+
+div.NavProfile,
+a.NavProfile,
+button.NavProfile,
+i.NavProfile{
+  &__Toggle{
+    user-select: none;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+  &__Menu{
+    right: 0;
+    top: 100%;
+    transform: translate(1rem, 1.5rem);
+    border-radius: 0 0 0 0.2rem;
+    padding: 0;
+    background-color: $main-color;
+    border: none;
+  }
+  &__Item{
+    padding: 0.8rem;
+    user-select: none;
+    color: aliceblue;
+    border-top: 1px solid aliceblue;
+    font-size: 0.85rem;
+  }
+  &__Icon{
+    margin-right: 0.4rem;
+    user-select: none;
+  }
+}

@@ -1,0 +1,19 @@
+.RegistrationForm__Box {
+  overflow: hidden;
+  max-width: 217px;
+}
+.RegistrationForm__Wrapper {
+  display: flex;
+  transition: all 0.2s linear;
+}
+.RegistrationForm__Wrapper._stage2 {
+  transform: translateX(-100%);
+}
+.RegistrationForm__Part {
+  min-width: 100%;
+}
+.RegistrationForm__Input {
+  width: 100%;
+}
+
+/*# sourceMappingURL=RegistrationForm.css.map */

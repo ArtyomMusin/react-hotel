@@ -1,0 +1,43 @@
+div.NavProfile__Toggle,
+a.NavProfile__Toggle,
+button.NavProfile__Toggle,
+i.NavProfile__Toggle {
+  user-select: none;
+}
+div.NavProfile__Toggle:hover,
+a.NavProfile__Toggle:hover,
+button.NavProfile__Toggle:hover,
+i.NavProfile__Toggle:hover {
+  cursor: pointer;
+}
+div.NavProfile__Menu,
+a.NavProfile__Menu,
+button.NavProfile__Menu,
+i.NavProfile__Menu {
+  right: 0;
+  top: 100%;
+  transform: translate(1rem, 1.5rem);
+  border-radius: 0 0 0 0.2rem;
+  padding: 0;
+  background-color: #212529;
+  border: none;
+}
+div.NavProfile__Item,
+a.NavProfile__Item,
+button.NavProfile__Item,
+i.NavProfile__Item {
+  padding: 0.8rem;
+  user-select: none;
+  color: aliceblue;
+  border-top: 1px solid aliceblue;
+  font-size: 0.85rem;
+}
+div.NavProfile__Icon,
+a.NavProfile__Icon,
+button.NavProfile__Icon,
+i.NavProfile__Icon {
+  margin-right: 0.4rem;
+  user-select: none;
+}
+
+/*# sourceMappingURL=NavProfile.css.map */

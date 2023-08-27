@@ -1,0 +1,23 @@
+.AuthModal__Link {
+  text-decoration: none;
+}
+.AuthModal__Link:hover {
+  cursor: pointer;
+}
+.AuthModal__Input {
+  border-radius: 0.3em;
+  border: 1px solid #212529;
+  padding: 0.5em;
+}
+.AuthModal__ChangeAction {
+  text-align: center;
+}
+.AuthModal__padding {
+  padding: 0.25rem;
+}
+
+input.form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(33, 37, 41, 0.25);
+}
+
+/*# sourceMappingURL=AuthModal.css.map */

@@ -1,0 +1,11 @@
+.MyOrders__Head {
+  border-bottom: 2px solid #b6b4b4;
+}
+.MyOrders__Row {
+  border-bottom: 1px solid #b6b4b4;
+}
+.MyOrders__Cell {
+  padding: 0.5rem 1rem;
+}
+
+/*# sourceMappingURL=MyOrders.css.map */

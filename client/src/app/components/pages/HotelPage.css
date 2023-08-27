@@ -1,0 +1,15 @@
+.HotelPage__City {
+  font-size: 2rem;
+}
+.HotelPage__ImgBox {
+  width: 65%;
+}
+.HotelPage__Img {
+  width: 100%;
+}
+.HotelPage__BedsQuality {
+  list-style: none;
+  padding-left: 0;
+}
+
+/*# sourceMappingURL=HotelPage.css.map */

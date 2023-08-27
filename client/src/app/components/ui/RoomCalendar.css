@@ -1,0 +1,58 @@
+.RoomCalendar__Selectable:hover {
+  cursor: pointer;
+  outline: 1px solid rgb(0, 194, 15);
+  border-radius: 50%;
+}
+.RoomCalendar__Chosen {
+  border-top: 2px solid rgb(0, 194, 15);
+  border-bottom: 2px solid rgb(0, 194, 15);
+}
+.RoomCalendar__Chosen._current {
+  border-top: 2px solid rgb(0, 194, 15);
+  border-bottom: 2px solid rgb(0, 194, 15);
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+.RoomCalendar__Chosen:hover {
+  cursor: pointer;
+  outline: none;
+  border-radius: 0;
+  background-color: rgba(166, 166, 166, 0.6);
+}
+.RoomCalendar__Chosen_first {
+  border-left: 2px solid rgb(0, 194, 15);
+  border-radius: 50% 0 0 50%;
+}
+.RoomCalendar__Chosen_first:hover {
+  border-radius: 50% 0 0 50%;
+}
+.RoomCalendar__Chosen_first._current {
+  border-left: 2px solid rgb(0, 194, 15);
+  border-radius: 50% 0 0 50%;
+}
+.RoomCalendar__Chosen_last {
+  border-right: 2px solid rgb(0, 194, 15);
+  border-radius: 0 50% 50% 0;
+}
+.RoomCalendar__Chosen_last:hover {
+  border-radius: 0 50% 50% 0;
+}
+.RoomCalendar__Chosen_last._current {
+  border-right: 2px solid rgb(0, 194, 15);
+  border-radius: 0 50% 50% 0;
+}
+.RoomCalendar__Booked {
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.4);
+}
+.RoomCalendar__UserOrder {
+  border-radius: 50%;
+  background-color: rgba(0, 145, 8, 0.6);
+}
+
+.RoomCalendar__Chosen_first.RoomCalendar__Chosen_last {
+  border-radius: 50% 50% 50% 50%;
+}
+
+/*# sourceMappingURL=RoomCalendar.css.map */

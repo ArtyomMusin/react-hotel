@@ -1,0 +1,92 @@
+[
+  {
+    "country": "Germany",
+    "city": "Hamburg",
+    "street": "St. Petersburger Str.",
+    "build": "1",
+    "postalCode": "20355",
+    "insideId": "0",
+    "images": ["1.jpg"]
+  },
+  {
+    "country": "Germany",
+    "city": "Bremerhaven",
+    "street": "Fischkai",
+    "build": "2",
+    "postalCode": "27572",
+    "insideId": "1",
+    "images": ["2.jpg"]
+  },
+  {
+    "country": "Serbia",
+    "city": "Beograd",
+    "street": "Браће Југовића",
+    "build": "17",
+    "postalCode": "11000",
+    "insideId": "2",
+    "images": ["3.jpg"]
+  },
+  {
+    "country": "Serbia",
+    "city": "Novisad",
+    "street": "Илије Огњановића",
+    "build": "10",
+    "postalCode": "",
+    "insideId": "3",
+    "images": ["4.jpg"]
+  },
+  {
+    "country": "France",
+    "city": "Paris",
+    "street": "Rue Cambon",
+    "build": "5",
+    "postalCode": "75001",
+    "insideId": "4",
+    "images": ["5.jpeg"]
+  },
+  {
+    "country": "Canada",
+    "city": "Vancouver",
+    "street": "Granville St",
+    "build": "1018",
+    "postalCode": "BC V6Z 1L5",
+    "insideId": "5",
+    "images": ["6.jpg"]
+  },
+  {
+    "country": "Japan",
+    "city": "Nagasaki",
+    "street": "Tateyama, Nagasaki-city",
+    "build": "2-16-1",
+    "postalCode": "",
+    "insideId": "6",
+    "images": ["7.jpg"]
+  },
+  {
+    "country": "Japan",
+    "city": "Tokyo",
+    "street": "Chome-19-1 Kabukicho, Shinjuku City",
+    "build": "1",
+    "postalCode": "",
+    "insideId": "7",
+    "images": ["8.jpg"]
+  },
+  {
+    "country": "Norway",
+    "city": "Oslo",
+    "street": "Prinsens gate",
+    "build": "6",
+    "postalCode": "0152",
+    "insideId": "8",
+    "images": ["9.jpg"]
+  },
+  {
+    "country": "Canada",
+    "city": "Toronto",
+    "street": "Applewood Crescent, Vaughan",
+    "build": "705",
+    "postalCode": "ON L4K 5W8",
+    "insideId": "9",
+    "images": ["10.jpg"]
+  }
+]

@@ -1,0 +1,18 @@
+.NavAuthorization{
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  &__Item{
+    display: inline-flex;
+    align-items: center;
+  }
+  &__Link{
+    text-decoration: none;
+    color: aliceblue;
+    transition: color .2s linear;
+    &:hover{
+      cursor: pointer;
+      color: #b1b1b1;
+    }
+  }
+}

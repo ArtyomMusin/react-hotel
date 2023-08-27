@@ -1,0 +1,26 @@
+@import '../../../style';
+
+.MainPage{
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  &__Title{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+}
+
+@keyframes sloganAnimation {
+  0%{
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
