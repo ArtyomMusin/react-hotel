@@ -1,0 +1,84 @@
+.RoomPage__Back {
+  color: var(----bs-body-color);
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+}
+.RoomPage__City {
+  font-size: 2rem;
+}
+.RoomPage__ImgBox {
+  width: 40%;
+}
+.RoomPage__Img {
+  width: 100%;
+}
+.RoomPage__BedsQuality {
+  list-style: none;
+  padding-left: 0;
+}
+.RoomPage__Entity {
+  font-weight: 500;
+}
+.RoomPage__OrderSection {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.RoomPage__OrderInfo {
+  position: relative;
+  width: 100%;
+}
+.RoomPage__OrderList {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s linear 0s;
+}
+.RoomPage__OrderList._active {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s linear 0.5s;
+}
+.RoomPage__SelectedTitle {
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s linear 0s;
+}
+.RoomPage__SelectedTitle._active {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s linear 0.5s;
+}
+.RoomPage__SelectedSuccessful {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  color: #52e508;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s linear 0s;
+}
+.RoomPage__SelectedSuccessful._active {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s linear 0.5s;
+}
+.RoomPage__SelectedFailed {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  color: #ff0000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s linear 0s;
+}
+.RoomPage__SelectedFailed._active {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s linear 0.5s;
+}
+
+/*# sourceMappingURL=RoomPage.css.map */

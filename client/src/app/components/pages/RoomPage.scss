@@ -1,0 +1,89 @@
+$order-title-animation: 0.5s;
+
+.RoomPage{
+  //&__Title{
+  //
+  //}
+  &__Back{
+    color: var(----bs-body-color);
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+  }
+  &__City{
+    font-size: 2rem;
+  }
+  &__ImgBox{
+    width: 40%;
+  }
+  &__Img{
+    width: 100%;
+  }
+  &__BedsQuality{
+    list-style: none;
+    padding-left: 0;
+  }
+  &__Entity{
+    font-weight: 500;
+  }
+  &__OrderSection{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &__OrderInfo{
+    position: relative;
+    width: 100%;
+  }
+  &__OrderList{
+    opacity: 0;
+    visibility: hidden;
+    transition: all $order-title-animation linear 0s;
+    &._active{
+      opacity: 1;
+      visibility: visible;
+      transition: all $order-title-animation linear 0.5s;
+    }
+  }
+  &__SelectedTitle{
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all $order-title-animation linear 0s;
+    &._active{
+      opacity: 1;
+      visibility: visible;
+      transition: all $order-title-animation linear $order-title-animation;
+    }
+  }
+  &__SelectedSuccessful{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    color: #52e508;
+    opacity: 0;
+    visibility: hidden;
+    transition: all $order-title-animation linear 0s;
+    &._active{
+      opacity: 1;
+      visibility: visible;
+      transition: all $order-title-animation linear $order-title-animation;
+    }
+  }
+  &__SelectedFailed{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    color: #ff0000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all $order-title-animation linear 0s;
+    &._active{
+      opacity: 1;
+      visibility: visible;
+      transition: all $order-title-animation linear $order-title-animation;
+    }
+  }
+}

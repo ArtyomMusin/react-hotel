@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Hamburg",
+    "country": "Germany"
+  },
+  {
+    "name": "Bremerhaven",
+    "country": "Germany"
+  },
+  {
+    "name": "Beograd",
+    "country": "Serbia"
+  },
+  {
+    "name": "Novisad",
+    "country": "Serbia"
+  },
+  {
+    "name": "Paris",
+    "country": "France"
+  },
+  {
+    "name": "Vancouver",
+    "country": "Canada"
+  },
+  {
+    "name": "Nagasaki",
+    "country": "Japan"
+  },
+  {
+    "name": "Tokyo",
+    "country": "Japan"
+  },
+  {
+    "name": "Oslo",
+    "country": "Norway"
+  },
+  {
+    "name": "Toronto",
+    "country": "Canada"
+  }
+]

@@ -1,0 +1,60 @@
+.RoomCalendar{
+  &__Selectable{
+    &:hover{
+      cursor: pointer;
+      outline: 1px solid rgb(0, 194, 15);
+      border-radius: 50%;
+    }
+  }
+  &__Chosen{
+    border-top: 2px solid rgb(0, 194, 15);
+    border-bottom: 2px solid rgb(0, 194, 15);
+    &._current{
+      border-top: 2px solid rgb(0, 194, 15);
+      border-bottom: 2px solid rgb(0, 194, 15);
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+    }
+    &:hover{
+      cursor: pointer;
+      outline: none;
+      border-radius: 0;
+      background-color: rgba(166, 166, 166, 0.6);
+    }
+    &_first{
+      border-left: 2px solid rgb(0, 194, 15);
+      border-radius: 50% 0 0 50%;
+      &:hover{
+        border-radius: 50% 0 0 50%;
+      }
+      &._current{
+        border-left: 2px solid rgb(0, 194, 15);
+        border-radius: 50% 0 0 50%;
+      }
+    }
+    &_last{
+      border-right: 2px solid rgb(0, 194, 15);
+      border-radius: 0 50% 50% 0;
+      &:hover{
+        border-radius: 0 50% 50% 0;
+      }
+      &._current{
+        border-right: 2px solid rgb(0, 194, 15);
+        border-radius: 0 50% 50% 0;
+      }
+    }
+  }
+  &__Booked{
+    border-radius: 50%;
+    background-color: rgba(256, 0, 0, 0.4);
+  }
+  &__UserOrder{
+    border-radius: 50%;
+    background-color: rgba(0, 145, 8, 0.6);
+  }
+}
+
+.RoomCalendar__Chosen_first.RoomCalendar__Chosen_last{
+  border-radius: 50% 50% 50% 50%;
+}

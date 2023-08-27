@@ -1,0 +1,18 @@
+.HotelPage{
+  &__Title{
+
+  }
+  &__City{
+    font-size: 2rem;
+  }
+  &__ImgBox{
+    width: 65%;
+  }
+  &__Img{
+    width: 100%;
+  }
+  &__BedsQuality{
+    list-style: none;
+    padding-left: 0;
+  }
+}

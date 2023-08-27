@@ -1,0 +1,23 @@
+.RegistrationForm{
+  &__Box {
+    overflow: hidden;
+    max-width: 217px;
+  }
+  &__Wrapper{
+    display: flex;
+    transition: all 0.2s linear;
+    &._stage2{
+      transform: translateX(-100%);
+    }
+  }
+  &__Part{
+    min-width: 100%;
+  }
+  &__Input{
+    width: 100%;
+  }
+}
+
+//.reg-wrapper._step2 {
+//  transform: translateX(-100%);
+//}

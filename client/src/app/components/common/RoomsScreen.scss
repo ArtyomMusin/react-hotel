@@ -1,0 +1,57 @@
+.RoomsScreen{
+  position: relative;
+  box-shadow: inset 0 0 2rem #EAD0C5FF;
+  border-radius: 0.6rem;
+  width: 16rem;
+  height: 11rem;
+  padding-top: 0.6rem;
+  &__Title{
+    text-align: center;
+    margin: 0;
+    font-size: 1rem;
+  }
+  &__List{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+  &__Room{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #aafcaf;
+    border-radius: 0.4rem;
+    user-select: none;
+    &:hover{
+      cursor: pointer;
+      box-shadow: inset 0 0 1rem rgba(0, 0, 0, 0.18);
+    }
+    &._disable{
+      &:hover{
+        cursor: unset;
+        box-shadow: none;
+      }
+    }
+  }
+  &__Ordered{
+    background-color: #f88a86;
+  }
+  &__Preloader{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 1);
+    opacity: 0.6;
+  }
+}

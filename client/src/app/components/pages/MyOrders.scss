@@ -1,0 +1,14 @@
+.MyOrders{
+  &__Table{
+
+  }
+  &__Head{
+    border-bottom: 2px solid #b6b4b4;
+  }
+  &__Row{
+    border-bottom: 1px solid #b6b4b4;
+  }
+  &__Cell{
+    padding: 0.5rem 1rem;
+  }
+}
