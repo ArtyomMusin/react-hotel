@@ -7,6 +7,7 @@ const tokenService = require('../services/token.service')
 
 router.post('/signUp',
     check('email', 'Некорректный email').isEmail(),
+    check('password', 'Некорректный пароль').isLength({min: 8}),
     async (req, res) => {
         try {
             const errors = validationResult(req)
@@ -56,14 +57,13 @@ router.post('/signUp',
 
 router.post('/signIn',
     check('email', 'Некорректный email'),
-    check('password', 'Некорректный email').isLength({min: 8}),
     async(req, res) => {
         try {
             const errors = validationResult(req)
             const { login, password } = req.body
 
             if(!errors.isEmpty() || !login){
-                res.status(400).json({
+                return res.status(400).json({
                     error: {
                         message: 'INVALID_DATA',
                         code: 400

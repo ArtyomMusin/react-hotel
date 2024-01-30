@@ -1,5 +1,5 @@
 export const getDayMask = (d, m, y) => {
-    if (!d || !m || !y) return
+    if (!d || (!m && m !== 0) || !y) return
     return `${d}.${m}.${y}`
 }
 
@@ -35,7 +35,7 @@ export const getTimestampOfEndMonth = (month, year) => {
 }
 
 export const getCountMonthDays = (month, year) => {
-    if (!month || !year) return
+    if ((!month && month !== 0) || !year) return
     return new Date(year, month + 1, 0).getDate()
 }
 

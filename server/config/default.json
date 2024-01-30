@@ -1,6 +1,6 @@
 {
     "port": 8080,
-    "mongoUri": "mongodb+srv://vmpcjfhotel:QLOMnhFJCWgPiNYl@cluster0.cwswbvr.mongodb.net/?retryWrites=true&w=majority",
+    "mongoUri": "mongodb://localhost:27017/hotel",
     "accessSecret": "vmpcjfhotelAccessKey",
     "refreshSecret": "vmpcjfhotelRefreshKey",
     "clientUrl": "http://localhost:3000"
