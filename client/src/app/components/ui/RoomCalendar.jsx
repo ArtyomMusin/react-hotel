@@ -58,7 +58,7 @@ const RoomCalendar = ({ chosen, setChosen, roomId, onChange, userId }) => {
         const prevMonth = MM > 0 ? MM - 1 : 11
         const prevDateDay = DD > 1 ? DD - 1 : getCountMonthDays(Number(MM) - 1, YY)
         const prevDateMonth = prevDateDay === getCountMonthDays(Number(MM) - 1, YY) && DD === 1 ? prevMonth : MM
-        const prevDateYear = prevDateMonth === 11 ? YY - 1 : YY
+        const prevDateYear = prevDateMonth === 11 && prevDateDay === 31 ? YY - 1 : YY
         return getDayMask(prevDateDay, prevDateMonth, prevDateYear)
     }
 
@@ -66,7 +66,7 @@ const RoomCalendar = ({ chosen, setChosen, roomId, onChange, userId }) => {
         const nextMonth = MM < 11 ? MM + 1 : 0
         const nextDateDay = DD < getCountMonthDays(MM, YY) ? DD + 1 : 1
         const nextDateMonth = nextDateDay === 1 ? nextMonth : MM
-        const nextDateYear = nextDateMonth === 1 ? YY + 1 : YY
+        const nextDateYear = nextDateMonth === 0 && nextDateDay === 1 ? YY + 1 : YY
         return getDayMask(nextDateDay, nextDateMonth, nextDateYear)
     }
 
@@ -79,9 +79,16 @@ const RoomCalendar = ({ chosen, setChosen, roomId, onChange, userId }) => {
         const chosenDay = getDayMask(day, month, year)
         const prevDay = getPrevDay(day, month, year, months)
         const nextDay = getNextDay(day, month, year, months)
-        if (chosen.includes(chosenDay)) addClass('RoomCalendar__Chosen')
-        if (chosen.includes(chosenDay) && !chosen.includes(prevDay)) addClass('RoomCalendar__Chosen_first')
-        if (chosen.includes(chosenDay) && !chosen.includes(nextDay)) addClass('RoomCalendar__Chosen_last')
+
+        if (chosen.includes(chosenDay)) {
+            addClass('RoomCalendar__Chosen')
+        }
+        if (chosen.includes(chosenDay) && !chosen.includes(prevDay)) {
+            addClass('RoomCalendar__Chosen_first')
+        }
+        if (chosen.includes(chosenDay) && !chosen.includes(nextDay)) {
+            addClass('RoomCalendar__Chosen_last')
+        }
         return classes
     }
 
@@ -99,6 +106,7 @@ const RoomCalendar = ({ chosen, setChosen, roomId, onChange, userId }) => {
         let className = ''
         const dateIsNotPast = toTimestamp(getDayMask(day, month, year)) >= currenDay
         const dateIsNotOrder = !orderDates?.includes(`${day}.${month}.${year}`)
+
         if (dateIsNotPast && dateIsNotOrder) {
             className += 'RoomCalendar__Selectable'
         }
