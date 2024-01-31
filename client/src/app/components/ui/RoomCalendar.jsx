@@ -80,15 +80,9 @@ const RoomCalendar = ({ chosen, setChosen, roomId, onChange, userId }) => {
         const prevDay = getPrevDay(day, month, year, months)
         const nextDay = getNextDay(day, month, year, months)
 
-        if (chosen.includes(chosenDay)) {
-            addClass('RoomCalendar__Chosen')
-        }
-        if (chosen.includes(chosenDay) && !chosen.includes(prevDay)) {
-            addClass('RoomCalendar__Chosen_first')
-        }
-        if (chosen.includes(chosenDay) && !chosen.includes(nextDay)) {
-            addClass('RoomCalendar__Chosen_last')
-        }
+        if (chosen.includes(chosenDay)) addClass('RoomCalendar__Chosen')
+        if (chosen.includes(chosenDay) && !chosen.includes(prevDay)) addClass('RoomCalendar__Chosen_first')
+        if (chosen.includes(chosenDay) && !chosen.includes(nextDay)) addClass('RoomCalendar__Chosen_last')
         return classes
     }
 
