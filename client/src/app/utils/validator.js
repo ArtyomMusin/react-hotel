@@ -17,8 +17,12 @@ export async function validator(data, config) {
         }
         case 'isExist': {
             if (!data.value) break
-            const response = await authService.isExist({ [field]: data.value })
-            statusValidate = Number(response.content.status) === 400
+            try {
+                await authService.isExist({ [field]: data.value })
+                statusValidate = false
+            } catch (e) {
+                statusValidate = true
+            }
             break
         }
         case 'isMatch': {

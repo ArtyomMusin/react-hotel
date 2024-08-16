@@ -11,6 +11,7 @@ $slider-animation: 1s;
   min-height: 580px;
   overflow: hidden;
   position: relative;
+  background-color: $main-color;
   &__Slides{
     overflow: hidden;
     display: flex;

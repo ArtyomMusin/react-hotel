@@ -39,10 +39,10 @@ const LoginForm = () => {
     const handleSubmit = async(e) => {
         setIsIncoming(true)
         e.preventDefault()
-        const result = await dispatch(signIn(state))
+        const { status } = await dispatch(signIn(state))
         setIsIncoming(false)
 
-        if (result?.error?.code === 400) {
+        if (status === 400) {
             setErrors({ invalidData: config.invalidData.message })
             return
         }
@@ -56,7 +56,7 @@ const LoginForm = () => {
             <Input
                 className={'mb-3'}
                 id={login}
-                placeholder={'LoginForm'}
+                placeholder={'Login'}
                 value={state.login}
                 onChange={e => handleChange(login, e.target.value)}
             />

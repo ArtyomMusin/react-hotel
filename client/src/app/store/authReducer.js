@@ -58,7 +58,12 @@ export const signIn = (data) => async(dispatch) => {
         await dispatch(loadOrdersByUser(localStorageService.getUserId()))
         return content
     } catch (e) {
-        dispatch(dataRequestFailed(e.message))
+        const { payload } = await dispatch(dataRequestFailed(e.message))
+        if (payload?.includes('400')) {
+            return {
+                status: 400
+            }
+        }
     }
 }
 

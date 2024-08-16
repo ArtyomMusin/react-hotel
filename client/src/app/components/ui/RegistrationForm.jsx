@@ -224,7 +224,7 @@ const RegistrationForm = () => {
                 </div>
             </div>
             <p className="AuthModal__padding mb-1">
-                <button className="btn btn-outline-dark w-100 m-0" type="button" onClick={handleNext}>{stage ? 'next step >' : '< prev state'}</button>
+                <button className="btn btn-outline-dark w-100 m-0" type="button" onClick={handleNext}>{stage ? 'next step >' : '< prev step'}</button>
             </p>
             <p className="AuthModal__padding  mb-1">
                 <button className="btn btn-outline-dark w-100 m-0" type="submit" disabled={isDisabledSubmit()}>
