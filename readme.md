@@ -10,6 +10,17 @@ Functional:
 - Booking a room or cancellation from the admin panel in the name and phone number of the customer
 - View all hotels and rooms and their status by date from the admin panel
 
+### Accounts: ###\
+admin:\
+login: Admin\
+password: admin111
+
+user:\
+login: User\
+password: user1111
+
+or you can create a new user account
+
 Main page
 ![accordionScreen](./public/1.jpg)
 
