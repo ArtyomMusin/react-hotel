@@ -1,0 +1,10 @@
+{
+    "port": 8080,
+    "mongoUri": "mongodb://gen_user:hGXm2p-~FIK%2BC.@147.45.168.45:27017/hotel?authSource=admin&directConnection=true",
+    "devMongoUri": "mongodb://gen_user:hGXm2p-~FIK%2BC.@147.45.168.45:27017/hotel?authSource=admin&directConnection=true",
+    "accessSecret": "vmpcjfhotelAccessKey",
+    "refreshSecret": "vmpcjfhotelRefreshKey",
+    "clientUrl": "http://localhost:3000"
+}
+
+
