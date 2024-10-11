@@ -9,6 +9,7 @@ import { getHotelById } from '../../store/hotelReducer'
 import { getCountryById } from '../../store/countryReducer'
 import { getCityById } from '../../store/cityReducer'
 import RoomPage from './RoomPage'
+import ContentLoaderLarge from '../common/ContentLoaderLarge'
 
 const RoomsList = () => {
     const { hotelId, roomId } = useParams()
@@ -39,7 +40,7 @@ const RoomsList = () => {
                     {data?.length ? (data.map(cardData =>
                         <RoomCard key={cardData._id} data={cardData} />
                     )) : (
-                        <h1>Loading...</h1>
+                        <ContentLoaderLarge/>
                     )}
                 </div>
             </div>

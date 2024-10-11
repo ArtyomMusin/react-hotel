@@ -23,8 +23,19 @@ $order-title-animation: 0.5s;
     list-style: none;
     padding-left: 0;
   }
+  &__WrapperEntity {
+    display: flex;
+    gap: 0.5rem;
+  }
   &__Entity{
     font-weight: 500;
+  }
+  &__Pencil {
+    font-size: 0.8rem;
+    transform: translateY(0.2rem);
+    &:hover {
+      cursor: pointer;
+    }
   }
   &__OrderSection{
     display: flex;

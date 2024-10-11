@@ -199,6 +199,7 @@ const Admin = () => {
                                         <th className="orders__cell">Name</th>
                                         <th className="orders__cell">Phone</th>
                                         <th className="orders__cell">Cancel</th>
+                                        <th className="orders__cell">Change</th>
                                     </tr>
                                 </thead>
                                 <tbody className="orders__body">
@@ -209,8 +210,9 @@ const Admin = () => {
                                             <td className="orders__cell">{order.userName}</td>
                                             <td className="orders__cell">{order.tel}</td>
                                             <td className="orders__cell">
-                                                <button className="btn btn-danger" onClick={() => handleRemove(order._id)}>
-                                                    {isLoadingRemoveOrder === order._id ? <Preloader /> : 'cancel'}
+                                                <button className="btn btn-danger"
+                                                    onClick={() => handleRemove(order._id)}>
+                                                    {isLoadingRemoveOrder === order._id ? <Preloader/> : 'cancel'}
                                                 </button>
                                             </td>
                                         </tr>

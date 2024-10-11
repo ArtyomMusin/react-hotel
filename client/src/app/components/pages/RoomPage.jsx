@@ -3,7 +3,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import './RoomPage.scss'
 import ContentWrapper from '../ui/hoc/ContentWrapper'
 import { useDispatch, useSelector } from 'react-redux'
-import { getByIdOfRoomsByHotel, loadRoomsByHotel } from '../../store/roomReducer'
+import { getByIdOfRoomsByHotel, loadRoomsByHotel, updateRoomData } from '../../store/roomReducer'
 import { getHotelById } from '../../store/hotelReducer'
 import { getCountryById } from '../../store/countryReducer'
 import { getCityById } from '../../store/cityReducer'
@@ -15,6 +15,14 @@ import useAuth from '../../context/useAuth'
 import { getRole } from '../../store/userReducer'
 import OrderForm from '../ui/OrderForm'
 import useModal from '../../context/useModal'
+import ContentLoaderLarge from '../common/ContentLoaderLarge'
+import Spinner from '../common/Spinner'
+import * as _ from 'lodash'
+
+const EDITABLE = {
+    TYPE: 'type',
+    BEDS: 'beds'
+}
 
 const RoomPage = () => {
     const dispatch = useDispatch()
@@ -24,7 +32,8 @@ const RoomPage = () => {
     const { toggleAuthModal } = useAuth()
     const { setContent, openModal, closeModal, setModalClosedListener } = useModal()
 
-    const roomData = useSelector(getByIdOfRoomsByHotel(roomId))
+    const roomDataFromDB = useSelector(getByIdOfRoomsByHotel(roomId))
+    const [roomData, setRoomData] = useState(null)
     const hotel = useSelector(getHotelById(hotelId))
     const country = useSelector(getCountryById(hotel?.country))
     const city = useSelector(getCityById(hotel?.city))
@@ -37,6 +46,7 @@ const RoomPage = () => {
     const [orderNotification, setOrderNotification] = useState(null)
     const [year, setYear] = useState()
     const [month, setMonth] = useState()
+    const [editable, setEditable] = useState(null)
 
     useEffect(() => {
         const array = [...chosen]
@@ -96,9 +106,22 @@ const RoomPage = () => {
         setModalClosedListener(() => setIsOrdering(false))
     }
 
+    const handleUpdateRoomData = (type, value) => {
+        setRoomData(prevState => ({ ...prevState, [type]: value }))
+    }
+
+    const handleSaveChanges = async() => {
+        await dispatch(updateRoomData(roomData))
+        setEditable(null)
+    }
+
     useEffect(() => {
         dispatch(loadRoomsByHotel(hotelId))
     }, [])
+
+    useEffect(() => {
+        setRoomData(_.cloneDeep(roomDataFromDB))
+    }, [roomDataFromDB])
 
     return (
         roomData ? (
@@ -125,9 +148,7 @@ const RoomPage = () => {
                                     <RoomCalendar chosen={chosen} setChosen={setChosen} roomId={roomId} onChange={onChangeDate} userId={userId} />
                                     <button className="btn btn-outline-dark" onClick={isAdmin ? handleOrderAdmin : () => handleSubmit()} disabled={isOrdering || !chosen.length}>
                                         {isOrdering ? (
-                                            <div className="spinner-border spinner-border-sm" role="status">
-                                                <span className="visually-hidden">Loading...</span>
-                                            </div>
+                                            <Spinner />
                                         ) : ('Order')}
                                     </button>
                                 </div>
@@ -139,15 +160,33 @@ const RoomPage = () => {
                             <p>Address: {hotel?.build}, {hotel?.street}, {city?.name}, {country?.name}, {hotel?.postalCode}</p>
                             <ul className="RoomPage__BedsQuality">
                                 <li><span className="RoomPage__Entity">Room:</span> {roomData?.room}</li>
-                                <li><span className="RoomPage__Entity">Type:</span> {roomData?.type}</li>
+                                <li className="RoomPage__WrapperEntity">
+                                    <span className="RoomPage__Entity">Type:</span>
+                                    {editable === EDITABLE.TYPE ? <input onInput={(e) => handleUpdateRoomData(EDITABLE.TYPE, e.currentTarget.value)} type="text" value={roomData?.type}/> : roomData?.type}
+                                    {isAdmin && (editable !== EDITABLE.TYPE ? (
+                                        <i className="bi bi-pencil RoomPage__Pencil" onClick={() => setEditable(EDITABLE.TYPE)}></i>
+                                    ) : (
+                                        <i className="bi bi-check2 RoomPage__Pencil" onClick={handleSaveChanges}></i>
+                                    ))}
+                                </li>
                                 <li><span className="RoomPage__Entity">Floor:</span> {roomData?.floor}</li>
-                                <li><span className="RoomPage__Entity">Beds:</span> {roomData?.beds}</li>
+                                <li className="RoomPage__WrapperEntity">
+                                    <span className="RoomPage__Entity">Beds:</span>
+                                    {editable === EDITABLE.BEDS ? <input onInput={(e) => handleUpdateRoomData(EDITABLE.BEDS, e.currentTarget.value)} type="text" value={roomData?.beds}/> : roomData?.beds}
+                                    {isAdmin && (editable !== EDITABLE.BEDS ? (
+                                        <i className="bi bi-pencil RoomPage__Pencil" onClick={() => setEditable(EDITABLE.BEDS)}></i>
+                                    ) : (
+                                        <i className="bi bi-check2 RoomPage__Pencil" onClick={handleSaveChanges}></i>
+                                    ))}
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </ContentWrapper>
             </section>
-        ) : (<h1>Loading...</h1>)
+        ) : (
+            <ContentLoaderLarge/>
+        )
     )
 }
 

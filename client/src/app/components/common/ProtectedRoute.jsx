@@ -5,6 +5,7 @@ import { Redirect, Route } from 'react-router-dom'
 import { getIsLoggedIn } from '../../store/authReducer'
 import { getRole } from '../../store/userReducer'
 import ContentWrapper from '../ui/hoc/ContentWrapper'
+import PageLoaderLoader from '../common/ContentLoaderLarge'
 
 const ProtectedRoute = ({ component: Component, children, role, ...rest }) => {
     const isLoggedIn = useSelector(getIsLoggedIn())
@@ -14,7 +15,7 @@ const ProtectedRoute = ({ component: Component, children, role, ...rest }) => {
         if (isLoggedIn && !authRole) {
             return (
                 <ContentWrapper>
-                    <h1 className="text-center">Loading...</h1>
+                    <PageLoaderLoader/>
                 </ContentWrapper>
             )
         }

@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import { validator } from '../../utils/validator'
 import { register } from '../../store/authReducer'
 import Input from '../common/form/Input'
+import Spinner from '../common/Spinner'
 
 const fields = {
     name: 'name',
@@ -84,6 +85,13 @@ const RegistrationForm = () => {
         password: {
             isRequired: {
                 message: 'Password is required'
+            },
+            min: {
+                message: 'The password must be more than 8 characters long',
+                value: 8
+            },
+            isCapitalSymbol: {
+                message: 'The password must contain both uppercase and uppercase letters'
             }
         },
         passwordRepeated: {
@@ -153,7 +161,9 @@ const RegistrationForm = () => {
     const { name: nameValue, email: emailValue, tel: telValue, login: loginValue, password: passwordValue, passwordRepeated: passwordRepeatedValue } = data
 
     const isDisabledSubmit = () => {
-        return Boolean(Object.keys(errors).length)
+        const isNotEmpty = Object.keys(data).reduce((val, field) => val ? Boolean(data[field].value) : false, true)
+        const noHaveErrors = !Object.keys(errors).length
+        return !(isNotEmpty && noHaveErrors)
     }
 
     return (
@@ -229,9 +239,7 @@ const RegistrationForm = () => {
             <p className="AuthModal__padding  mb-1">
                 <button className="btn btn-outline-dark w-100 m-0" type="submit" disabled={isDisabledSubmit()}>
                     {isSending ? (
-                        <div className="spinner-border" role="status">
-                            <span className="visually-hidden">Loading...</span>
-                        </div>
+                        <Spinner/>
                     ) : (
                         'Register'
                     )}

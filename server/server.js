@@ -36,7 +36,7 @@ async function start() {
             initDatabase()
         })
 
-        await mongoose.connect(config.get('mongoUri'))
+        await mongoose.connect(config.get(process.env.NODE_ENV === 'production' ? 'mongoUri' : 'devMongoUri'))
         console.log(chalk.green(`MongoDB connected.`))
 
         app.listen(PORT, () =>

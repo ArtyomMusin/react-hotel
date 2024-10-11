@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import roomService from '../services/room.service'
+import * as _ from 'lodash'
 
 const initialState = {
     isLoading: true,
@@ -32,12 +33,18 @@ const roomSlice = createSlice({
         dataRequestedFailed: (state, action) => {
             state.isLoading = false
             state.error = action.payload
+        },
+        dataUpdateRoom: (state, action) => {
+            const index = state.roomsByHotel?.findIndex((room) => room.id === action.payload.id)
+            const rooms = _.cloneDeep(state.roomsByHotel)
+            rooms[index] = action.payload
+            state.roomsByHotel = rooms
         }
     }
 })
 
 const { reducer: roomReducer, actions } = roomSlice
-const { dataRequested, dataReceived, dataRequestedFailed, dataRoomsByHotelReceived, dataCurrentRoomsReceived } = actions
+const { dataRequested, dataReceived, dataRequestedFailed, dataRoomsByHotelReceived, dataCurrentRoomsReceived, dataUpdateRoom } = actions
 
 export const loadAllRooms = () => async(dispatch) => {
     dispatch(dataRequested())
@@ -67,6 +74,21 @@ export const loadRoomsByIds = (roomsIdsArray) => async(dispatch) => {
         dispatch(dataCurrentRoomsReceived(content))
     } catch (e) {
         dispatch(dataRequestedFailed(e.message))
+    }
+}
+
+export const updateRoomData = (newData) => async(dispatch) => {
+    try {
+        const newDataWithCorrectImgPaths = { ...newData, images: newData.images.map(fullPath => fullPath.replace(/^.*[\\/]/, '')) }
+        const { content } = await roomService.updateRoom(newDataWithCorrectImgPaths)
+        dispatch(dataUpdateRoom(content))
+        return { code: 200, message: 'Successful' }
+    } catch (e) {
+        dispatch(dataRequestedFailed(e.message))
+        if (e.message === 'Unauthorized') {
+            return { code: 401, message: 'Unauthorized' }
+        }
+        return { code: 500, message: 'Server error. Try later' }
     }
 }
 

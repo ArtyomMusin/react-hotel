@@ -3,6 +3,7 @@ import SelectCountries from '../ui/SelectCountries'
 import SelectCities from '../ui/SelectCities'
 import useHotels from '../../context/useHotels'
 import HotelCard from '../ui/HotelCard'
+import ContentLoaderLarge from '../common/ContentLoaderLarge'
 
 const HotelsList = () => {
     const { hotels } = useHotels()
@@ -26,7 +27,7 @@ const HotelsList = () => {
                 </div>
             </>
         ) : (
-            <h1>Loading...</h1>
+            <ContentLoaderLarge />
         )
     )
 }

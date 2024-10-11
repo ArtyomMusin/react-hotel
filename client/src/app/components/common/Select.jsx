@@ -10,7 +10,7 @@ const Select = ({ data, value, allItemsName, onChange }) => {
                     <option key={item._id} value={item._id}>{item.name}</option>
                 )
             ) : (
-                <option value="Loading" disabled>Loading...</option>
+                <option value="Loading" disabled>Loading...</option>  // это дропдаун, сюда не нужно лоадер пихать...
             )}
         </select>
     )

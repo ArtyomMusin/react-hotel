@@ -3,6 +3,7 @@ import useAuth from '../../context/useAuth'
 import { useDispatch } from 'react-redux'
 import { signIn } from '../../store/authReducer'
 import Input from '../common/form/Input'
+import Spinner from '../common/Spinner'
 
 const formFields = {
     login: 'login',
@@ -71,9 +72,7 @@ const LoginForm = () => {
             />
             <p className="mb-2"><button className="btn btn-outline-dark w-100 m-0" type='submit' onClick={handleSubmit}>
                 {isIncoming ? (
-                    <div className="spinner-border" role="status">
-                        <span className="visually-hidden">Loading...</span>
-                    </div>
+                    <Spinner />
                 ) : (
                     'Login'
                 )}

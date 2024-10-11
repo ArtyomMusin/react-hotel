@@ -29,6 +29,15 @@ export async function validator(data, config) {
             statusValidate = data.value !== config.password
             break
         }
+        case 'isCapitalSymbol': {
+            const capitalRegExp = /[A-Z]+/g
+            statusValidate = !capitalRegExp.test(data.value)
+            break
+        }
+        case 'min': {
+            statusValidate = data.value.length < config.value
+            break
+        }
         default:
             break
         }
