@@ -8,7 +8,7 @@ RUN npm install
 
 COPY client /app/client
 
-RUN npm run client
+RUN npm run build
 
 FROM node:14
 
