@@ -84,6 +84,7 @@ const RoomPage = () => {
             city,
             ...userData
         }))
+
         const result = await dispatch(orderRoom(data))
         if (result.code === 401) {
             customerData ? closeModal() : toggleAuthModal()
@@ -162,7 +163,12 @@ const RoomPage = () => {
                                 <li><span className="RoomPage__Entity">Room:</span> {roomData?.room}</li>
                                 <li className="RoomPage__WrapperEntity">
                                     <span className="RoomPage__Entity">Type:</span>
-                                    {editable === EDITABLE.TYPE ? <input onInput={(e) => handleUpdateRoomData(EDITABLE.TYPE, e.currentTarget.value)} type="text" value={roomData?.type}/> : roomData?.type}
+                                    {editable === EDITABLE.TYPE ? (
+                                        <select defaultValue={roomData?.type} onChange={(e) => handleUpdateRoomData(EDITABLE.TYPE, e?.currentTarget?.value)}>
+                                            <option value="standard">standard</option>
+                                            <option value="lux">lux</option>
+                                        </select>
+                                    ) : (roomData?.type)}
                                     {isAdmin && (editable !== EDITABLE.TYPE ? (
                                         <i className="bi bi-pencil RoomPage__Pencil" onClick={() => setEditable(EDITABLE.TYPE)}></i>
                                     ) : (
